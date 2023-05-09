@@ -1,0 +1,170 @@
+@use "../utilities/variables.scss" as *;
+
+@mixin horizontal-padding {
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+.leaderboard-modal {
+  position: relative;
+  z-index: 4;
+  width: 300px;
+  padding: 0px;
+  border: none;
+  border-radius: 17px;
+  overflow: hidden;
+
+  .leaderboard-modal-title-wrapper {
+    position: absolute;
+    top: -93px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 298px;
+    height: 143px;
+    background-color: #0091fa;
+    border-radius: 101px;
+  }
+
+  header {
+    background-color: #001227;
+    @include horizontal-padding;
+    padding-bottom: 18px;
+  }
+
+  h2 {
+    position: relative;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 12px;
+    margin-bottom: 29px;
+  }
+
+  .leaderboard-modal-position-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 7px;
+  }
+
+  &::backdrop {
+    background-color: transparent;
+  }
+
+  &[data-animation="opening"] {
+    animation: modalAppearing 200ms ease-in-out;
+  }
+
+  &[data-animation="closing"] {
+    animation: modalAppearing 200ms ease-in-out reverse;
+  }
+}
+
+.leaderboard-entry {
+  display: flex;
+  padding: 9px 10px;
+  border-radius: 12px;
+  background-color: #035fa3;
+}
+
+.leaderboard-entry-user-text {
+  color: white;
+}
+
+.leaderboard-entry-user-rank {
+  margin-right: 6px;
+}
+
+.leaderboard-entry-user-time {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.leaderboard-entry-user-time-icon {
+  display: inline-flex;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+  }
+}
+
+.leaderboard-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  height: 266px;
+  @include horizontal-padding;
+  background-color: #000b17;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.leaderboard-list-page-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  color: white;
+  background-color: #000b17;
+  padding: 5px;
+}
+
+.leaderboard-list-page-navigation-current-page {
+  padding-bottom: 5px;
+
+  .lds-spinner {
+    transform: scale(0.25) translate(-27px, -21px);
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.leaderboard-list-page-navigation-link {
+  cursor: pointer;
+
+  svg {
+    fill: white;
+  }
+
+  &.next {
+    transform: scaleX(-1);
+  }
+
+  &[data-is-available="false"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.leaderboard-empty-state {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.leaderboard-empty-state-image {
+  display: flex;
+  justify-content: center;
+
+  svg {
+    width: 194px;
+    height: 194px;
+  }
+}
+
+.leaderboard-empty-state-text {
+  color: white;
+  text-align: center;
+}

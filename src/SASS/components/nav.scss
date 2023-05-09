@@ -1,0 +1,140 @@
+@use "../utilities/sr-only.scss";
+@use "../utilities/breakpoints.scss" as *;
+@use "../utilities/variables.scss" as *;
+
+nav {
+  position: fixed;
+  z-index: 2;
+  top: 0px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100vw;
+  padding: 20px 22px 18px 22px;
+
+  background-color: rgba(255, 255, 255, 0.92);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  backdrop-filter: blur(4px);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+}
+
+.characters-list {
+  display: inline-flex;
+  gap: 12px;
+  padding: unset;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-go-back-button {
+  width: 32px;
+  height: 32px;
+  padding: 0px;
+  background: none;
+
+  @include md-breakpoint {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+
+    svg {
+      display: none;
+    }
+  }
+
+  &:active svg {
+    fill: #022f5a;
+  }
+}
+
+.nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+
+  @include md-breakpoint {
+    background: $azure;
+    width: unset;
+    height: 53px;
+    border-radius: 8px;
+    transition: background-color 200ms ease-in-out;
+  }
+
+  &:hover {
+    background-color: #047ed7;
+  }
+}
+
+.nav-go-back-button-text {
+  @extend .sr-only;
+
+  @include md-breakpoint {
+    clip: unset;
+    clip-path: unset;
+    overflow: unset;
+    position: unset;
+    white-space: unset;
+    width: unset;
+    height: unset;
+  }
+}
+
+.nav-go-back-button-icon {
+  display: inline-flex;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    fill: #045cad;
+    transition: fill 200ms ease-in-out;
+  }
+
+  &:hover,
+  &:active {
+    background-color: #ffffff;
+    svg {
+      fill: #0585fc;
+    }
+  }
+}
+
+.nav-leaderboard-button {
+  display: none;
+  padding: 7px;
+
+  svg {
+    width: 35px;
+    height: 35px;
+    fill: white;
+  }
+
+  @include md-breakpoint {
+    display: flex;
+  }
+}
+
+.stopwatch {
+  display: none;
+
+  @include md-breakpoint {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 21px;
+  }
+}
+
+.stopwatch-icon svg {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,16 @@
+.character-icon {
+  width: var(--width);
+  height: var(--width);
+  border-radius: 50%;
+  background-color: currentColor;
+  overflow: hidden;
+
+  &[data-found="true"] {
+    opacity: 0.5;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,121 @@
+@use "../utilities/variables.scss" as *;
+
+.win-modal {
+  width: 277px;
+  border: none;
+  border-radius: 15px;
+  padding: 53px 19px 21px 19px;
+
+  &::backdrop {
+    background-color: transparent;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  &[data-animation="opening"] {
+    animation: modalAppearing 200ms ease-in-out;
+  }
+
+  &[data-animation="closing"] {
+    animation: modalAppearing 200ms ease-in-out reverse;
+  }
+}
+
+.win-modal-trophy-icon {
+  display: inline-flex;
+  margin-bottom: 20px;
+
+  svg {
+    width: 100px;
+    height: 100px;
+    fill: $azure;
+  }
+}
+
+.win-modal-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.win-modal-time-icon {
+  display: inline-flex;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.win-modal-star {
+  display: inline-flex;
+
+  svg {
+    width: 64px;
+    height: 64px;
+  }
+
+  svg {
+    color: #5c5f62;
+  }
+
+  &[data-active="true"] {
+    svg {
+      color: #ffb800;
+    }
+  }
+}
+
+.user-name-input {
+  width: 100%;
+  border: 1px solid #0091fa;
+  border-radius: 7px;
+  padding: 4px 10px 5px 10px;
+  margin-bottom: 11px;
+
+  transition: box-shadow 200ms ease-in-out;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    box-shadow: 0px 0px 0px 3px #c4e2f7;
+  }
+
+  &::placeholder {
+    font-weight: 600;
+  }
+}
+
+.win-modal-submit-cta {
+  width: 100%;
+  font-size: 1.25rem;
+  color: white;
+  background-color: $azure;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: #20a0fd;
+  }
+}
+
+.win-modal-stars {
+  display: flex;
+  gap: 11px;
+  justify-content: center;
+  margin-bottom: 22px;
+}

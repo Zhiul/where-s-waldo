@@ -1,0 +1,46 @@
+@keyframes charactersSelectAppearing {
+  from {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  to {
+    pointer-events: none;
+    opacity: 1;
+  }
+}
+
+.characters-select {
+  position: fixed;
+  top: 0;
+  left: 0px;
+  width: 189px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 15px 0px;
+  border-radius: 8px;
+  z-index: 2;
+
+  animation: charactersSelectAppearing 100ms ease-in-out;
+}
+
+.characters-select-overlay {
+  position: fixed;
+  z-index: 1;
+  inset: 0px 0px 0px 0px;
+}
+
+.character-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #eaeaea;
+  }
+}
+
+.coordinates-selection-circle-icon {
+  position: absolute;
+}
