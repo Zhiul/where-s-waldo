@@ -1,3 +1,5 @@
+export {};
+
 interface Image {
   title: string;
   high_res_url: string;
